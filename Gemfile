@@ -12,4 +12,5 @@ group :test, :development do
   gem 'capybara'
   gem 'rack-test'
   gem 'pry'
+  gem 'learn-co'
 end
