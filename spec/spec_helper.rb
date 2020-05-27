@@ -1,3 +1,6 @@
+require 'rspec'
+require 'capybara/rspec'
+require 'capybara/dsl'
 require_relative '../config/environment.rb'
 require 'rack/test'
 RACK_ENV = "test"
@@ -14,3 +17,17 @@ end
 def app
   Rack::Builder.parse_file('config.ru').first
 end
+RSpec.configure do |config|
+  # Mixin the Capybara functionality into Rspec
+  config.include Capybara::DSL
+  config.order = 'default'
+end
+ 
+# Define the application we're testing
+def app
+  # Load the application defined in config.ru
+  Rack::Builder.parse_file('config.ru').first
+end
+ 
+# Configure Capybara to test against the application above.
+Capybara.app = app
