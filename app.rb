@@ -13,8 +13,12 @@ class App < Sinatra::Base
     "Hello #{@user_name}!"
   end
 
-  get "/goodbye/:name" do
-    @user_name = params[:name]
+  get "/goodbye/:name" do #receiving 
+    @user_name = params[:name]  
+                              #  argument object that is given to us with the server req. 
+                              #   it is a hash, where :name becomes a key, while the info where
+                              #   put ("milos") becomes a value and it sends the info back to
+                              #   the server and the forward to the view (.erb) page
     "Goodbye, #{@user_name}."
   end
 
