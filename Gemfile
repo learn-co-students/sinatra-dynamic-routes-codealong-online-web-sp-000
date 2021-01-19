@@ -3,7 +3,7 @@ source "https://rubygems.org"
 
 gem 'sinatra'
 gem 'rake'
-gem 'thin'
+gem 'thin', '~> 1.8'
 gem 'shotgun'
 gem 'require_all'
 
